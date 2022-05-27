@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:KitchenTimeXamarin.Components;assembly=KitchenTimeXamarin"
+             x:Class="KitchenTimeXamarin.Components.Timer"
+             x:DataType="components:TimerData"
+             >
+    
+    <Grid>
+        <Label Text="10:00" 
+               HorizontalOptions="Center"/>
+    </Grid>
+</Grid>
