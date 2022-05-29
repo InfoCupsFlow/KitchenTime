@@ -5,8 +5,10 @@
      xmlns:views="clr-namespace:KitchenTimeXamarin.Views;assembly=KitchenTimeXamarin"
      x:Class="KitchenTimeXamarin.AppShell">
      
-     <ShellItem Route="MainPage">
-          <ShellContent ContentTemplate="{DataTemplate views:MainPage}" />
-     </ShellItem> 
+     <ShellContent Route="MainPage"
+                   ContentTemplate="{DataTemplate views:MainPage}" 
+                   />
+
+      
 
 </Shell>
