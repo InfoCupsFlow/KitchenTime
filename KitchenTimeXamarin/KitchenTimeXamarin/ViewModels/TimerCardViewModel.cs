@@ -21,7 +21,19 @@ namespace KitchenTimeXamarin.ViewModels
 			set => SetProperty(ref countDown, value);
 		}
 
+		private bool isRunning = false;
+		public bool IsRunning
+		{
+			get => isRunning; 
+			set
+			{
+				SetProperty(ref isRunning, value);
+				StartCommand.RaiseCanExecuteChanged();
+			}
+		}
+		
 		public Command StartCommand { get; set; }
+		
 
 
 		public TimerCardViewModel(string title, TimeSpan duration)
@@ -29,12 +41,13 @@ namespace KitchenTimeXamarin.ViewModels
 			Title = title;
 			Duration = duration;
 			CountDown = Duration;
-			StartCommand = new Command(StartCountDown);
+			StartCommand = new Command(StartCountDown, () => !IsRunning);
 		}
 
 		public void StartCountDown()
 		{
 			CountDown = Duration;
+			IsRunning = true;
 			
 			Device.StartTimer(TimeSpan.FromSeconds(1), Tick );
 		}
@@ -43,7 +56,14 @@ namespace KitchenTimeXamarin.ViewModels
 		{
 			CountDown -= TimeSpan.FromSeconds(1);
 
-			return CountDown.TotalSeconds > 0;
+			if (CountDown.TotalSeconds > 0)
+				return true;
+			else
+			{
+				IsRunning = false;
+				return false;
+			}
+
 		}
 	}
 }

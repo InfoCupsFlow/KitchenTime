@@ -47,6 +47,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+        <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.58" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     </ItemGroup>
     <ItemGroup>
