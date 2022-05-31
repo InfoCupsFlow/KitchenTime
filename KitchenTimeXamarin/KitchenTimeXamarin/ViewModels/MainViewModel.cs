@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using KitchenTimeXamarin.Components;
 using KitchenTimeXamarin.Data.Models;
 using MvvmHelpers;
 using Xamarin.Forms;
@@ -8,30 +10,39 @@ namespace KitchenTimeXamarin.ViewModels
 {
 	public class MainViewModel : ObservableObject
 	{
-		private string countDownDisplay = "00:00:00";
-		public string CountDownDisplay
-		{
-			get => countDownDisplay;
-			set => SetProperty(ref countDownDisplay, value);
-		}
-		public MvvmHelpers.Commands.Command<Timer> SetTimerCommand { get; set; }
 
-		public ObservableCollection<Timer> Timers { get; set; }
+		public ObservableRangeCollection<TimerCardViewModel> Timers { get; set; }
+
+		public MvvmHelpers.Commands.Command<TimeSet> SetTimerCommand { get; set; }
+
+		
+		// Configs
+		public ObservableCollection<TimeSet> TimeSets { get; set; }
 
 		public MainViewModel()
 		{
-			Timers = new ObservableCollection<Timer>();
-			Timers.Add(new Timer(){Name = "30s", Secunds = 30});
-			Timers.Add(new Timer(){Name = "1m", Secunds = 60});
-			Timers.Add(new Timer(){Name = "3m", Secunds = 180});
-			Timers.Add(new Timer(){Name = "10m", Secunds = 600});
+			Timers = new ObservableRangeCollection<TimerCardViewModel>();
+			
+			TimeSets = new ObservableCollection<TimeSet>();
+			TimeSets.Add(new TimeSet(){Name = "10s", Duration =new TimeSpan(0,0,10)});
+			TimeSets.Add(new TimeSet(){Name = "1m", Duration= new TimeSpan(0,1,0)});
+			TimeSets.Add(new TimeSet(){Name = "3m", Duration= new TimeSpan(0,3,0)});
+			TimeSets.Add(new TimeSet(){Name = "10m", Duration =new TimeSpan(0,10,0)});
 
-			SetTimerCommand = new MvvmHelpers.Commands.Command<Timer>(OnSetTimer);
+			SetTimerCommand = new MvvmHelpers.Commands.Command<TimeSet>(TimeSetSelected);
 		}
-
-		private void OnSetTimer(Timer timer)
+		
+		private void TimeSetSelected(TimeSet timeSet)
 		{
-			CountDownDisplay = timer.Secunds.ToString();
+			var timer = new TimerCardViewModel(timeSet.Name, timeSet.Duration);
+			StartNewTimer(timer);
 		}
+
+		private void StartNewTimer(TimerCardViewModel timer)
+		{
+			Timers.Add(timer);
+		}
+
+
 	}
 }

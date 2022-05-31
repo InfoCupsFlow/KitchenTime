@@ -1,8 +1,10 @@
+using System;
+
 namespace KitchenTimeXamarin.Data.Models
 {
-	public class Timer
+	public class TimeSet
 	{
 		public string Name { get; set; }
-		public int Secunds { get; set; }
+		public TimeSpan Duration { get; set; }
 	}
 }

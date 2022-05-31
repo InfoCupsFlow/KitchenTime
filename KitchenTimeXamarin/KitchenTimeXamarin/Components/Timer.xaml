@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:models="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
       x:Class="KitchenTimeXamarin.Components.Timer"
-      x:DataType="models:Timer"
+      x:DataType="models:TimeSet"
       >
     
-    <Frame BackgroundColor="White" HeightRequest="50" WidthRequest="50">
-        <Label Text="{Binding Name}" 
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+    <Frame BackgroundColor="Blue" 
+           HasShadow="False"
+           CornerRadius="120"
+           HeightRequest="200" 
+           WidthRequest="200"
+           Margin="10"
+           IsClippedToBounds="True"
+           HorizontalOptions="Center">
+        <Frame BackgroundColor="White" 
+               HasShadow="False"
+               CornerRadius="100"
+               HeightRequest="195"
+               WidthRequest="195"
+               IsClippedToBounds="True"
+               HorizontalOptions="Center">
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Pečené kuře" HorizontalTextAlignment="Center" />
+                <TimePicker Time="00:00:00" />
+                <Button Text="II" />
+            </StackLayout>
+        </Frame>
     </Frame>
         
     
-</Grid>
+</ContentView>
