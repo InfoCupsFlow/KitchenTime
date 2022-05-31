@@ -29,13 +29,7 @@
             <CollectionView ItemsSource="{Binding Timers}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewModels:TimerCardViewModel">
-                        <Grid>
-                            <StackLayout>
-                                <Label Text="{Binding Title}"/>
-                                <Label Text="{Binding CountDown}"/>
-                                <Button Text="Start" Command="{Binding StartCommand}"/>
-                            </StackLayout>
-                        </Grid>
+                        <components:Timer/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
