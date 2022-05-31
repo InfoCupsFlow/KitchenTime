@@ -16,7 +16,16 @@
                 <sfgauge:Header Text="{Binding Title}" Position="0.5, 0.7" ForegroundColor="#0682F6" FontAttributes="Bold" TextSize="10"/>
             </sfgauge:SfCircularGauge.Headers>
             <sfgauge:SfCircularGauge.Scales>
-                <sfgauge:Scale ShowLabels="True" ShowTicks="False" StartValue="0" EndValue="{Binding Duration.TotalSeconds}">
+                <sfgauge:Scale ShowLabels="False" 
+                               ShowTicks="False" 
+                               StartValue="0" 
+                               EndValue="{Binding Duration.TotalSeconds}"
+                               RadiusFactor="1"
+                               RimThickness="10"
+                               RimColor="Transparent">
+                    <sfgauge:Scale.Pointers>
+                        <sfgauge:RangePointer Value="{Binding CountDown.TotalSeconds}" Color="Blue" Thickness="5" Offset="1" />
+                    </sfgauge:Scale.Pointers>
                 </sfgauge:Scale>
             </sfgauge:SfCircularGauge.Scales>
         </sfgauge:SfCircularGauge>
