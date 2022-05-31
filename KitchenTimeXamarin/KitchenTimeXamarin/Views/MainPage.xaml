@@ -9,7 +9,8 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="True"
              x:DataType="viewModels:MainViewModel"
->
+             BackgroundColor="{StaticResource ColorBackground}"
+             >
     
     <ContentPage.BindingContext>
         <viewModels:MainViewModel />
@@ -29,7 +30,18 @@
             <CollectionView ItemsSource="{Binding Timers}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewModels:TimerCardViewModel">
-                        <components:Timer/>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Smazat" 
+                                               Command="{Binding Path=RemoveTimerCommand, Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}}" 
+                                               CommandParameter="{Binding .}"
+                                               BackgroundColor="Transparent" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <components:Timer/>
+                        </SwipeView>
+                        
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -38,6 +50,7 @@
 
         <StackLayout Grid.Row="1">
             <Button Text="Spustit časovač"/>
+             
         </StackLayout>
 
         <StackLayout Grid.Row="2" BackgroundColor="Aquamarine">
@@ -54,6 +67,18 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
+            <Label Text="ImageIcon:"></Label>
+            <Image>
+                <Image.Source>
+                    <FontImageSource Glyph="&#xe88a;" 
+                                     Color="Orange" 
+                                     FontFamily="MaterialOutlined" 
+                                     Size="44" />
+                </Image.Source>
+            </Image>
+            <Label Text="TextIcon:"></Label>
+            <Label Text="&#xea11;" FontSize="50" TextColor="Orange"
+                   FontFamily="MaterialOutlined" HorizontalOptions="Center" /> 
         </StackLayout>
         
     </Grid>

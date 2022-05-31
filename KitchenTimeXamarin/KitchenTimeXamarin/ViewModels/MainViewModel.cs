@@ -5,6 +5,7 @@ using KitchenTimeXamarin.Components;
 using KitchenTimeXamarin.Data.Models;
 using MvvmHelpers;
 using Xamarin.Forms;
+using Command = MvvmHelpers.Commands.Command;
 
 namespace KitchenTimeXamarin.ViewModels
 {
@@ -14,6 +15,7 @@ namespace KitchenTimeXamarin.ViewModels
 		public ObservableRangeCollection<TimerCardViewModel> Timers { get; set; }
 
 		public MvvmHelpers.Commands.Command<TimeSet> SetTimerCommand { get; set; }
+		public MvvmHelpers.Commands.Command<TimerCardViewModel> RemoveTimerCommand { get; set; }
 
 		
 		// Configs
@@ -30,8 +32,14 @@ namespace KitchenTimeXamarin.ViewModels
 			TimeSets.Add(new TimeSet(){Name = "10m", Duration =new TimeSpan(0,10,0)});
 
 			SetTimerCommand = new MvvmHelpers.Commands.Command<TimeSet>(TimeSetSelected);
+			RemoveTimerCommand = new MvvmHelpers.Commands.Command<TimerCardViewModel>(RemoveTimer);
 		}
-		
+
+		private void RemoveTimer(TimerCardViewModel timer)
+		{
+			Timers.Remove(timer);
+		}
+
 		private void TimeSetSelected(TimeSet timeSet)
 		{
 			var timer = new TimerCardViewModel(timeSet.Name, timeSet.Duration);

@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KitchenTimeXamarin.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Color x:Key="ColorBackground">#ECF4FF</Color>
+            <Color x:Key="ColorPrimery">#87B1F4</Color>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -14,4 +14,19 @@
         <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.58" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\Fonts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Fonts\MaterialIcons-Regular.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Fonts\MaterialIconsRound.otf" />
+      <EmbeddedResource Include="Resources\Fonts\MaterialIconsRound.otf" />
+      <None Remove="Resources\Fonts\MaterialIconsOutlined.otf" />
+      <EmbeddedResource Include="Resources\Fonts\MaterialIconsOutlined.otf" />
+    </ItemGroup>
 </Project>
