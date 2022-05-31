@@ -6,6 +6,13 @@
         <ResourceDictionary>
             <Color x:Key="ColorBackground">#ECF4FF</Color>
             <Color x:Key="ColorPrimery">#87B1F4</Color>
+            
+            <x:String x:Key="Font">ArchivoNarrow</x:String>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Font}" />
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

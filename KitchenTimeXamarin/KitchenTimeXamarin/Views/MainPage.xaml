@@ -53,8 +53,8 @@
              
         </StackLayout>
 
-        <StackLayout Grid.Row="2" BackgroundColor="Aquamarine">
-            <Label Text="Rychlé volby:" />
+        <StackLayout Grid.Row="2">
+            <Label Text="Rychlé volby:"/>
             <StackLayout Grid.Row="1"
                          BindableLayout.ItemsSource="{Binding TimeSets}"
                          Orientation="Horizontal">

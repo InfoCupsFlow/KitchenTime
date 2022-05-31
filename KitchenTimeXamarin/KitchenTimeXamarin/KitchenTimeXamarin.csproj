@@ -28,5 +28,7 @@
       <EmbeddedResource Include="Resources\Fonts\MaterialIconsRound.otf" />
       <None Remove="Resources\Fonts\MaterialIconsOutlined.otf" />
       <EmbeddedResource Include="Resources\Fonts\MaterialIconsOutlined.otf" />
+      <None Remove="Resources\Fonts\ArchivoNarrow.ttf" />
+      <EmbeddedResource Include="Resources\Fonts\ArchivoNarrow.ttf" />
     </ItemGroup>
 </Project>

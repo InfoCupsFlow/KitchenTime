@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 [assembly: ExportFont("MaterialIconsOutlined.otf", Alias = "MaterialOutlined")]
 [assembly: ExportFont("MaterialIconsRound.otf", Alias = "MaterialRound")]
+[assembly: ExportFont("ArchivoNarrow.ttf", Alias = "ArchivoNarrow")]
 
 namespace KitchenTimeXamarin
 {
