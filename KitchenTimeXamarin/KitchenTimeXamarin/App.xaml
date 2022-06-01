@@ -5,12 +5,25 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="ColorBackground">#ECF4FF</Color>
-            <Color x:Key="ColorPrimery">#87B1F4</Color>
+            <Color x:Key="ColorPrimary">#3D69B0</Color>
+            <Color x:Key="ColorPrimaryLight">White</Color>
+            <Color x:Key="ColorButton">White</Color> 
             
             <x:String x:Key="Font">ArchivoNarrow</x:String>
+            <x:String x:Key="MaterialIconsOutlined">MaterialOutlined</x:String>
             
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource Font}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+            </Style>
+            
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource Font}" />
+                <Setter Property="Background" Value="{StaticResource ColorButton}" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
             </Style>
             
         </ResourceDictionary>

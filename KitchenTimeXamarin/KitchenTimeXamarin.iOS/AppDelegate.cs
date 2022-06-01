@@ -27,6 +27,9 @@ namespace KitchenTimeXamarin.iOS
 			Syncfusion.SfGauge.XForms.iOS.SfGaugeRenderer.Init();
 			
 			LoadApplication(new App());
+			
+			// Syncfusion Init
+			Syncfusion.XForms.iOS.Buttons.SfButtonRenderer.Init();
 
 			return base.FinishedLaunching(app, options);
 		}

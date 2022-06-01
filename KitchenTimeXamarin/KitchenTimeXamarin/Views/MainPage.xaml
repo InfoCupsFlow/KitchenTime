@@ -5,6 +5,7 @@
              xmlns:viewModels="clr-namespace:KitchenTimeXamarin.ViewModels;assembly=KitchenTimeXamarin"
              xmlns:models="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
              xmlns:components="clr-namespace:KitchenTimeXamarin.Components;assembly=KitchenTimeXamarin"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="KitchenTimeXamarin.Views.MainPage"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="True"
@@ -23,7 +24,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="60" />
-            <RowDefinition Height="300" />
+            <RowDefinition Height="200" />
          </Grid.RowDefinitions>  
         
         <Grid Row="0">
@@ -33,10 +34,18 @@
                         <SwipeView>
                             <SwipeView.LeftItems>
                                 <SwipeItems Mode="Execute">
-                                    <SwipeItem Text="Smazat" 
-                                               Command="{Binding Path=RemoveTimerCommand, Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}}" 
-                                               CommandParameter="{Binding .}"
-                                               BackgroundColor="Transparent" />
+                                    <SwipeItemView 
+                                           Command="{Binding Path=RemoveTimerCommand, Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}}" 
+                                           CommandParameter="{Binding .}"
+                                           WidthRequest="200"
+                                           BackgroundColor="{StaticResource ColorBackground}">
+                                        <Label Text="&#xe872;" 
+                                               FontFamily="{StaticResource MaterialIconsOutlined}"
+                                               TextColor="{StaticResource ColorPrimaryLight}"
+                                               FontSize="80"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"/>
+                                    </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.LeftItems>
                             <components:Timer/>
@@ -55,30 +64,22 @@
 
         <StackLayout Grid.Row="2">
             <Label Text="Rychlé volby:"/>
-            <StackLayout Grid.Row="1"
-                         BindableLayout.ItemsSource="{Binding TimeSets}"
+            <StackLayout BindableLayout.ItemsSource="{Binding TimeSets}"
                          Orientation="Horizontal">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="models:TimeSet">
                         <Button Text="{Binding Name}"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}, 
                                               Path=SetTimerCommand}"
-                                CommandParameter="{Binding .}"/>
+                                CommandParameter="{Binding .}">
+                        </Button>
+                        
+                        
+                        
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <Label Text="ImageIcon:"></Label>
-            <Image>
-                <Image.Source>
-                    <FontImageSource Glyph="&#xe88a;" 
-                                     Color="Orange" 
-                                     FontFamily="MaterialOutlined" 
-                                     Size="44" />
-                </Image.Source>
-            </Image>
-            <Label Text="TextIcon:"></Label>
-            <Label Text="&#xea11;" FontSize="50" TextColor="Orange"
-                   FontFamily="MaterialOutlined" HorizontalOptions="Center" /> 
+            
         </StackLayout>
         
     </Grid>
