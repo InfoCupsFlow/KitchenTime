@@ -48,6 +48,7 @@ namespace KitchenTimeXamarin.ViewModels
 
 		private void StartNewTimer(TimerCardViewModel timer)
 		{
+			//Timers.Insert(0, timer);
 			Timers.Add(timer);
 		}
 

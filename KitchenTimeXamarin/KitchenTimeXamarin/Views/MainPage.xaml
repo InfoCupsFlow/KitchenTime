@@ -28,7 +28,8 @@
          </Grid.RowDefinitions>  
         
         <Grid Row="0">
-            <CollectionView ItemsSource="{Binding Timers}">
+            <CollectionView ItemsSource="{Binding Timers}"
+                            ItemsUpdatingScrollMode="KeepLastItemInView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewModels:TimerCardViewModel">
                         <SwipeView>
