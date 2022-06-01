@@ -8,18 +8,15 @@
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="KitchenTimeXamarin.Views.MainPage"
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="True"
              x:DataType="viewModels:MainViewModel"
-             BackgroundColor="{StaticResource ColorBackground}"
-             >
+             BackgroundColor="{AppThemeBinding 
+                                    Light={StaticResource ColorBackground},
+                                    Dark={StaticResource ColorBackgroundDark}}">
     
     <ContentPage.BindingContext>
         <viewModels:MainViewModel />
     </ContentPage.BindingContext>
-
-
-
-        
+    
     <Grid VerticalOptions="End">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -39,10 +36,10 @@
                                            Command="{Binding Path=RemoveTimerCommand, Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}}" 
                                            CommandParameter="{Binding .}"
                                            WidthRequest="200"
-                                           BackgroundColor="{StaticResource ColorBackground}">
+                                            >
                                         <Label Text="&#xe872;" 
                                                FontFamily="{StaticResource MaterialIconsOutlined}"
-                                               TextColor="{StaticResource ColorPrimaryLight}"
+                                               TextColor="{StaticResource ColorSecundary}"
                                                FontSize="80"
                                                VerticalOptions="Center"
                                                HorizontalOptions="Center"/>

@@ -5,8 +5,9 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="ColorBackground">#ECF4FF</Color>
+            <Color x:Key="ColorBackgroundDark">#373737</Color>
             <Color x:Key="ColorPrimary">#3D69B0</Color>
-            <Color x:Key="ColorPrimaryLight">White</Color>
+            <Color x:Key="ColorSecundary">White</Color>
             <Color x:Key="ColorButton">White</Color> 
             
             <x:String x:Key="Font">ArchivoNarrow</x:String>

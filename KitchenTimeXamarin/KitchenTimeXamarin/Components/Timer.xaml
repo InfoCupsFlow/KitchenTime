@@ -7,7 +7,7 @@
       xmlns:sfgauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
       x:Class="KitchenTimeXamarin.Components.Timer"
       x:DataType="viewModels:TimerCardViewModel"
-      BackgroundColor="{StaticResource ColorBackground}">
+      >
     
 
     <StackLayout>
@@ -19,7 +19,7 @@
             <sfgauge:SfCircularGauge.Scales>
                 <sfgauge:Scale ShowRim="False" ShowLabels="False" ShowTicks="False" StartValue="0" EndValue="{Binding Duration.TotalSeconds}">
                     <sfgauge:Scale.Pointers>
-                        <sfgauge:RangePointer Value="{Binding Duration.TotalSeconds}" Color="{StaticResource ColorPrimaryLight}" Thickness="10" Offset="1" RangeCap="Both" EnableAnimation="False"/>
+                        <sfgauge:RangePointer Value="{Binding Duration.TotalSeconds}" Color="{StaticResource ColorSecundary}" Thickness="10" Offset="1" RangeCap="Both" EnableAnimation="False"/>
                         <sfgauge:RangePointer Value="{Binding CountDown.TotalSeconds}" Color="{StaticResource ColorPrimary}" Thickness="10" Offset="1" RangeCap="Both" EnableAnimation="False"/>
                     </sfgauge:Scale.Pointers>
                 </sfgauge:Scale>
