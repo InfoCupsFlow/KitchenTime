@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              x:Class="KitchenTimeXamarin.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -12,6 +13,7 @@
             
             <x:String x:Key="Font">ArchivoNarrow</x:String>
             <x:String x:Key="MaterialIconsOutlined">MaterialOutlined</x:String>
+
             
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource Font}" />
@@ -25,6 +27,13 @@
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="CornerRadius" Value="25" />
                 <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+            </Style>
+            
+            <!-- Syncfusion -->
+            <Style TargetType="syncfusion:Header">
+                <Setter Property="ForegroundColor" Value="{StaticResource ColorPrimary}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="{StaticResource Font}"/>
             </Style>
             
         </ResourceDictionary>

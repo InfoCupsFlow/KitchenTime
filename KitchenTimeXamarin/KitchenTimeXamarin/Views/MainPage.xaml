@@ -13,6 +13,15 @@
                                     Light={StaticResource ColorBackground},
                                     Dark={StaticResource ColorBackgroundDark}}">
     
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="20, 60, 20, 0" />
+                <On Platform="Android" Value="20, 20, 20, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
     <ContentPage.BindingContext>
         <viewModels:MainViewModel />
     </ContentPage.BindingContext>
@@ -26,10 +35,11 @@
         
         <Grid Row="0">
             <CollectionView ItemsSource="{Binding Timers}"
-                            ItemsUpdatingScrollMode="KeepLastItemInView">
+                            ItemsUpdatingScrollMode="KeepLastItemInView"
+                            >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewModels:TimerCardViewModel">
-                        <SwipeView>
+                        <SwipeView BackgroundColor="Transparent">
                             <SwipeView.LeftItems>
                                 <SwipeItems Mode="Execute">
                                     <SwipeItemView 
@@ -40,9 +50,8 @@
                                         <Label Text="&#xe872;" 
                                                FontFamily="{StaticResource MaterialIconsOutlined}"
                                                TextColor="{StaticResource ColorSecundary}"
-                                               FontSize="80"
-                                               VerticalOptions="Center"
-                                               HorizontalOptions="Center"/>
+                                               FontSize="120"
+                                               VerticalOptions="Center"/>
                                     </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.LeftItems>
@@ -63,7 +72,8 @@
         <StackLayout Grid.Row="2">
             <Label Text="Rychlé volby:"/>
             <StackLayout BindableLayout.ItemsSource="{Binding TimeSets}"
-                         Orientation="Horizontal">
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="models:TimeSet">
                         <Button Text="{Binding Name}"

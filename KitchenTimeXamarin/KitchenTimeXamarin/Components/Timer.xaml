@@ -7,14 +7,15 @@
       xmlns:sfgauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
       x:Class="KitchenTimeXamarin.Components.Timer"
       x:DataType="viewModels:TimerCardViewModel"
+      
       >
     
 
     <StackLayout>
         <sfgauge:SfCircularGauge HeightRequest="200" WidthRequest="200" >
             <sfgauge:SfCircularGauge.Headers>
-                <sfgauge:Header Text="{Binding CountDown}" Position="0.5, 0.5" ForegroundColor="{StaticResource ColorPrimary}" FontAttributes="Bold" TextSize="30"/>
-                <sfgauge:Header Text="{Binding Title}" Position="0.5, 0.7" ForegroundColor="{StaticResource ColorPrimary}" FontAttributes="Bold" TextSize="20"/>
+                <sfgauge:Header Text="{Binding CountDown}" Position="0.5, 0.5" TextSize="30"/>
+                <sfgauge:Header Text="{Binding Title}" Position="0.5, 0.7"  TextSize="20"/>
             </sfgauge:SfCircularGauge.Headers>
             <sfgauge:SfCircularGauge.Scales>
                 <sfgauge:Scale ShowRim="False" ShowLabels="False" ShowTicks="False" StartValue="0" EndValue="{Binding Duration.TotalSeconds}">
