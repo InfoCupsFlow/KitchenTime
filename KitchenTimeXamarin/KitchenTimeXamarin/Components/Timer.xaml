@@ -7,7 +7,7 @@
       xmlns:sfgauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
       x:Class="KitchenTimeXamarin.Components.Timer"
       x:DataType="viewModels:TimerCardViewModel"
-      
+      Padding="20"
       >
     
 
@@ -26,7 +26,6 @@
                 </sfgauge:Scale>
             </sfgauge:SfCircularGauge.Scales>
         </sfgauge:SfCircularGauge>
-        <Button Text="Start" Command="{Binding StartCommand}"/>
     </StackLayout>
         
     

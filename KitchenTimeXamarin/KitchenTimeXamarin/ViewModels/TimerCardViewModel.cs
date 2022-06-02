@@ -42,6 +42,7 @@ namespace KitchenTimeXamarin.ViewModels
 			Duration = duration;
 			CountDown = Duration;
 			StartCommand = new Command(StartCountDown, () => !IsRunning);
+			StartCommand.Execute(null);
 		}
 
 		public void StartCountDown()

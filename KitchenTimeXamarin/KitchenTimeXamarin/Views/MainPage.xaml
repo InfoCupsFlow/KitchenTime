@@ -17,7 +17,7 @@
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.Platforms>
                 <On Platform="iOS" Value="20, 60, 20, 0" />
-                <On Platform="Android" Value="20, 20, 20, 0" />
+                <On Platform="Android" Value="20, 0, 20, 0" />
             </OnPlatform.Platforms>
         </OnPlatform>
     </ContentPage.Padding>
@@ -29,7 +29,7 @@
     <Grid VerticalOptions="End">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="60" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="200" />
          </Grid.RowDefinitions>  
         
@@ -37,6 +37,25 @@
             <CollectionView ItemsSource="{Binding Timers}"
                             ItemsUpdatingScrollMode="KeepLastItemInView"
                             >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" 
+                                       ItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout HorizontalOptions="CenterAndExpand"
+                                     VerticalOptions="CenterAndExpand">
+                            <Label Text="Zvolte v rychlých volbých požadovaný čas, nebo konkrétní pokrm."
+                                   FontSize="24"
+                                   Margin="20"
+                                   HorizontalTextAlignment="Center" />
+                            <Label Text="Pro vlastní nastavení časovače stiskněte tlačítko “Spustit časovač”."
+                                   FontSize="18"
+                                   Margin="30"
+                                   HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewModels:TimerCardViewModel">
                         <SwipeView BackgroundColor="Transparent">
@@ -65,8 +84,10 @@
         
 
         <StackLayout Grid.Row="1">
-            <Button Text="Spustit časovač"/>
-             
+            <Button Text="Spustit časovač"
+                    HeightRequest="40"
+                    Background="Transparent"
+            />
         </StackLayout>
 
         <StackLayout Grid.Row="2">

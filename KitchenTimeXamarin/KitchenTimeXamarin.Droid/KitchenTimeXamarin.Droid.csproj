@@ -14,7 +14,6 @@
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-        <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
         <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     </PropertyGroup>
@@ -70,7 +69,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\KitchenTimeXamarin\KitchenTimeXamarin.csproj">
-            <Project>{EB89CC62-7F0C-487A-B503-B22F3FF0D6D9}</Project>
+            <Project>{C4FA7934-901F-4E5C-B5CD-40068987D59B}</Project>
             <Name>KitchenTimeXamarin</Name>
         </ProjectReference>
     </ItemGroup>

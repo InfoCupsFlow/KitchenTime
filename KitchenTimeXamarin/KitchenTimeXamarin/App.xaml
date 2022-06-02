@@ -17,7 +17,7 @@
             
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource Font}" />
-                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}"/>
             </Style>
             
             <Style TargetType="Button">
@@ -27,6 +27,7 @@
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="CornerRadius" Value="25" />
                 <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="TextTransform" Value="None" />
             </Style>
             
             <!-- Syncfusion -->
