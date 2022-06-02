@@ -8,11 +8,12 @@
             <Color x:Key="ColorBackground">#ECF4FF</Color>
             <Color x:Key="ColorBackgroundDark">#373737</Color>
             <Color x:Key="ColorPrimary">#3D69B0</Color>
-            <Color x:Key="ColorSecundary">White</Color>
+            <Color x:Key="ColorSecundary">#7698D0</Color>
             <Color x:Key="ColorButton">White</Color> 
             
             <x:String x:Key="Font">ArchivoNarrow</x:String>
             <x:String x:Key="MaterialIconsOutlined">MaterialOutlined</x:String>
+            <x:String x:Key="MaterialIconsRounded">MaterialRound</x:String>
 
             
             <Style TargetType="Label">

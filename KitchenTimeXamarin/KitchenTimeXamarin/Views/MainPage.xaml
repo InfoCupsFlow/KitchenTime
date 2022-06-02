@@ -6,6 +6,7 @@
              xmlns:models="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
              xmlns:components="clr-namespace:KitchenTimeXamarin.Components;assembly=KitchenTimeXamarin"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              x:Class="KitchenTimeXamarin.Views.MainPage"
              Shell.FlyoutBehavior="Disabled"
              x:DataType="viewModels:MainViewModel"
@@ -29,7 +30,7 @@
     <Grid VerticalOptions="End">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="200" />
          </Grid.RowDefinitions>  
         
@@ -45,11 +46,11 @@
                     <ContentView>
                         <StackLayout HorizontalOptions="CenterAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <Label Text="Zvolte v rychlých volbých požadovaný čas, nebo konkrétní pokrm."
+                            <Label Text="Zvolte v rychlých volbách požadovaný čas, nebo konkrétní pokrm."
                                    FontSize="24"
                                    Margin="20"
                                    HorizontalTextAlignment="Center" />
-                            <Label Text="Pro vlastní nastavení časovače stiskněte tlačítko “Spustit časovač”."
+                            <Label Text="... nebo můžete použít vlastní nastavení časovače."
                                    FontSize="18"
                                    Margin="30"
                                    HorizontalTextAlignment="Center" />
@@ -84,14 +85,47 @@
         
 
         <StackLayout Grid.Row="1">
-            <Button Text="Spustit časovač"
-                    HeightRequest="40"
-                    Background="Transparent"
-            />
+            <Label Text="Vlastní časovač:" TextDecorations="Underline"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <syncfusion:SfTimePicker HeaderText="Spustit časovač"
+                                         Time="{Binding CustomTime}"
+                                         HeaderFontFamily="{StaticResource Font}"
+                                         ShowFooter="False"
+                                         ShowHeader="False"
+                                         PickerHeight="100"
+                                         PickerWidth="20"
+                                         BackgroundColor="Transparent"
+                                         ColumnHeaderBackgroundColor="Transparent"
+                                         ColumnHeaderFontSize="10"
+                                         ColumnHeaderFontFamily="{StaticResource Font}"
+                                         ColumnHeaderTextColor="{StaticResource ColorPrimary}"
+                                         BorderColor="Transparent"
+                                         HourHeaderText="Hodin"
+                                         MinutesHeaderText="Minut"
+                                         SecondsHeaderText="Sekund"
+                                         SelectedItemFontFamily="{StaticResource Font}"
+                                         SelectedItemFontSize="24"
+                                         SelectedItemTextColor="{StaticResource ColorPrimary}"
+                                         UnselectedItemTextColor="{StaticResource ColorSecundary}"
+                                         UnselectedItemFontFamily="{StaticResource Font}"
+                                         UnselectedItemFontSize="16"
+                                         Background="{StaticResource ColorBackground}" />
+                <Button Grid.Column="1" 
+                        Text="&#xe1c4;"
+                        FontFamily="{StaticResource MaterialIconsOutlined}"
+                        FontSize="80"
+                        Background="Transparent"
+                        Command="{Binding SetCustomTimerCommand}"/>
+            </Grid>
         </StackLayout>
 
         <StackLayout Grid.Row="2">
-            <Label Text="Rychlé volby:"/>
+            <Label Text="Rychlé volby:" TextDecorations="Underline"/>
             <StackLayout BindableLayout.ItemsSource="{Binding TimeSets}"
                          Orientation="Horizontal"
                          HorizontalOptions="Center">

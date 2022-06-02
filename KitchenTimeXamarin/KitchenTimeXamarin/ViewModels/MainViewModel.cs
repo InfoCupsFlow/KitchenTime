@@ -15,8 +15,15 @@ namespace KitchenTimeXamarin.ViewModels
 		public ObservableRangeCollection<TimerCardViewModel> Timers { get; set; }
 
 		public MvvmHelpers.Commands.Command<TimeSet> SetTimerCommand { get; set; }
+		public MvvmHelpers.Commands.Command SetCustomTimerCommand { get; set; }
 		public MvvmHelpers.Commands.Command<TimerCardViewModel> RemoveTimerCommand { get; set; }
 
+		private TimeSpan customTime = new TimeSpan();
+		public TimeSpan CustomTime
+		{
+			get => customTime;
+			set => SetProperty(ref customTime, value);
+		}
 		
 		// Configs
 		public ObservableCollection<TimeSet> TimeSets { get; set; }
@@ -32,6 +39,7 @@ namespace KitchenTimeXamarin.ViewModels
 			TimeSets.Add(new TimeSet(){Name = "10m", Duration =new TimeSpan(0,10,0)});
 
 			SetTimerCommand = new MvvmHelpers.Commands.Command<TimeSet>(TimeSetSelected);
+			SetCustomTimerCommand = new MvvmHelpers.Commands.Command(StartCustomTimer);
 			RemoveTimerCommand = new MvvmHelpers.Commands.Command<TimerCardViewModel>(RemoveTimer);
 		}
 
@@ -43,6 +51,13 @@ namespace KitchenTimeXamarin.ViewModels
 		private void TimeSetSelected(TimeSet timeSet)
 		{
 			var timer = new TimerCardViewModel(timeSet.Name, timeSet.Duration);
+			StartNewTimer(timer);
+		}
+
+		private void StartCustomTimer()
+		{
+			var timer = new TimerCardViewModel("", CustomTime);
+			CustomTime = new TimeSpan();
 			StartNewTimer(timer);
 		}
 

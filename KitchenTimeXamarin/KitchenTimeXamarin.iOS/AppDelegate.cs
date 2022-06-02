@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
+using Syncfusion.XForms.Pickers.iOS;
 using UIKit;
 
 namespace KitchenTimeXamarin.iOS
@@ -29,6 +30,7 @@ namespace KitchenTimeXamarin.iOS
 			LoadApplication(new App());
 			
 			// Syncfusion Init
+			SfTimePickerRenderer.Init();
 			Syncfusion.XForms.iOS.Buttons.SfButtonRenderer.Init();
 
 			return base.FinishedLaunching(app, options);
