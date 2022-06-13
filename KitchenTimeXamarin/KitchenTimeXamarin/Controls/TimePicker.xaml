@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitchenTimeXamarin.Controls.TimePicker"
+             xmlns:pickers="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <pickers:SfTimePicker HeaderText="Spustit časovač"
+                              Time="{Binding CustomTime}"
+                              HeaderFontFamily="{StaticResource Font}"
+                              ShowFooter="False"
+                              ShowHeader="False"
+                              PickerHeight="100"
+                              PickerWidth="20"
+                              BackgroundColor="Transparent"
+                              ColumnHeaderBackgroundColor="Transparent"
+                              ColumnHeaderFontSize="10"
+                              ColumnHeaderFontFamily="{StaticResource Font}"
+                              ColumnHeaderTextColor="{StaticResource ColorPrimary}"
+                              BorderColor="Transparent"
+                              HourHeaderText="Hodin"
+                              MinutesHeaderText="Minut"
+                              SecondsHeaderText="Sekund"
+                              SelectedItemFontFamily="{StaticResource Font}"
+                              SelectedItemFontSize="24"
+                              SelectedItemTextColor="{StaticResource ColorPrimary}"
+                              UnselectedItemTextColor="{StaticResource ColorSecundary}"
+                              UnselectedItemFontFamily="{StaticResource Font}"
+                              UnselectedItemFontSize="16"
+                              Background="{StaticResource ColorBackground}" />
+        
+        <Button Grid.Column="1"
+                Text="&#xe1c4;"
+                FontFamily="{StaticResource MaterialIconsOutlined}"
+                FontSize="80"
+                Background="Transparent"
+                Command="{Binding SetCustomTimerCommand}" />
+    </Grid>
+
+
+</ContentView>

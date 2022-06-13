@@ -4,8 +4,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:KitchenTimeXamarin.ViewModels;assembly=KitchenTimeXamarin"
              xmlns:models="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
-             xmlns:components="clr-namespace:KitchenTimeXamarin.Components;assembly=KitchenTimeXamarin"
-             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
              x:Class="KitchenTimeXamarin.Views.MainPage"
              Shell.FlyoutBehavior="Disabled"
@@ -31,68 +29,14 @@
     <ScrollView VerticalScrollBarVisibility="Never">
         <StackLayout>
 
-            <controls:TimerCollection />
+            <controls:TimerCollection Timers="{Binding Timers}"/>
+            
+            <Button Text="Vlastní časovač"
+                    VerticalOptions="Center"
+                    Command="{Binding CreateCustomTimerCommand}"/>
 
-            <StackLayout Grid.Row="1">
-                <Label Text="Vlastní časovač:" TextDecorations="Underline" />
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="2*" />
-                    </Grid.ColumnDefinitions>
-
-                    <syncfusion:SfTimePicker HeaderText="Spustit časovač"
-                                             Time="{Binding CustomTime}"
-                                             HeaderFontFamily="{StaticResource Font}"
-                                             ShowFooter="False"
-                                             ShowHeader="False"
-                                             PickerHeight="100"
-                                             PickerWidth="20"
-                                             BackgroundColor="Transparent"
-                                             ColumnHeaderBackgroundColor="Transparent"
-                                             ColumnHeaderFontSize="10"
-                                             ColumnHeaderFontFamily="{StaticResource Font}"
-                                             ColumnHeaderTextColor="{StaticResource ColorPrimary}"
-                                             BorderColor="Transparent"
-                                             HourHeaderText="Hodin"
-                                             MinutesHeaderText="Minut"
-                                             SecondsHeaderText="Sekund"
-                                             SelectedItemFontFamily="{StaticResource Font}"
-                                             SelectedItemFontSize="24"
-                                             SelectedItemTextColor="{StaticResource ColorPrimary}"
-                                             UnselectedItemTextColor="{StaticResource ColorSecundary}"
-                                             UnselectedItemFontFamily="{StaticResource Font}"
-                                             UnselectedItemFontSize="16"
-                                             Background="{StaticResource ColorBackground}" />
-                    <Button Grid.Column="1"
-                            Text="&#xe1c4;"
-                            FontFamily="{StaticResource MaterialIconsOutlined}"
-                            FontSize="80"
-                            Background="Transparent"
-                            Command="{Binding SetCustomTimerCommand}" />
-                </Grid>
-            </StackLayout>
-
-            <StackLayout Grid.Row="2">
-                <Label Text="Rychlé volby:" TextDecorations="Underline" />
-                <StackLayout BindableLayout.ItemsSource="{Binding TimeSets}"
-                             Orientation="Horizontal"
-                             HorizontalOptions="Center">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="models:TimeSet">
-                            <Button Text="{Binding Name}"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainViewModel}}, 
-                                              Path=SetTimerCommand}"
-                                    CommandParameter="{Binding .}">
-                            </Button>
-
-
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-
-            </StackLayout>
-
+           <controls:TimePicker HeightRequest="100"/>
+            
         </StackLayout>
     </ScrollView>
 

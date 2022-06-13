@@ -2,10 +2,21 @@
 
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KitchenTimeXamarin.Controls.TimerCard">
+             xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
+             x:Class="KitchenTimeXamarin.Controls.TimerCard"
+             x:DataType="controls:TimerCard"
+             x:Name="this">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Timer"/>
-        </StackLayout>
+        
+        <Frame>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="{Binding Timer.Name, Source={x:Reference this}}"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding Timer.Duration, Source={x:Reference this}}" 
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Frame>
+        
     </ContentPage.Content>
 </ContentView>

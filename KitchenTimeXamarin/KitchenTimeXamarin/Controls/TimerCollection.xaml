@@ -2,13 +2,30 @@
 
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
+             xmlns:data="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
              x:Class="KitchenTimeXamarin.Controls.TimerCollection"
-             BackgroundColor="Bisque"
-             HeightRequest="400">
-    
-    
-    
-    <Label Text="Timers"></Label>
+             HeightRequest="400"
+             x:DataType="controls:TimerCollection"
+             x:Name="this">
+
+
+    <StackLayout Padding="0,10,0,10">
+        <CarouselView ItemsSource="{Binding Timers, Source={x:Reference this}}"
+                      PeekAreaInsets="50"
+                      Loop="False"
+                      HorizontalScrollBarVisibility="Never">
+            <CarouselView.ItemsLayout >
+                <LinearItemsLayout Orientation="Horizontal" 
+                                   ItemSpacing="30"/> 
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="data:Timer">
+                    <controls:TimerCard Timer="{Binding Path=.}"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </StackLayout>
     
     
     <!-- <CollectionView ItemsSource="{Binding Timers}" -->
