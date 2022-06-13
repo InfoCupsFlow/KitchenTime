@@ -9,7 +9,7 @@
     
     <ContentPage.Content>
         
-        <Frame>
+        <Frame HasShadow="False">
             <StackLayout HorizontalOptions="Center">
                 <Label Text="{Binding Timer.Name, Source={x:Reference this}}"
                        HorizontalTextAlignment="Center"/>

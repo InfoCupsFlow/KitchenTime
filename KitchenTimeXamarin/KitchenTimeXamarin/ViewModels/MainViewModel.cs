@@ -17,8 +17,7 @@ namespace KitchenTimeXamarin.ViewModels
 			
 		}
 		public ObservableCollection<TimeSet> TimeSets { get; set; }
-
-		public Command CreateCustomTimerCommand { get; set; }
+		
 
 		public MainViewModel()
 		{
@@ -31,13 +30,7 @@ namespace KitchenTimeXamarin.ViewModels
 			TimeSets.Add(new TimeSet(){Name = "1m", Duration= new TimeSpan(0,1,0)});
 			TimeSets.Add(new TimeSet(){Name = "3m", Duration= new TimeSpan(0,3,0)});
 			TimeSets.Add(new TimeSet(){Name = "10m", Duration =new TimeSpan(0,10,0)});
-
-			CreateCustomTimerCommand = new Command(CreateTimer);
 		}
-
-		private void CreateTimer()
-		{
-			timers.Add(new Timer() {Name = "Nový timer", Duration = new TimeSpan(0,5,0)});
-	}
+		
 	}
 }

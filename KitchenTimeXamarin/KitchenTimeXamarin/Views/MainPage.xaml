@@ -30,12 +30,10 @@
         <StackLayout>
 
             <controls:TimerCollection Timers="{Binding Timers}"/>
-            
-            <Button Text="Vlastní časovač"
-                    VerticalOptions="Center"
-                    Command="{Binding CreateCustomTimerCommand}"/>
 
-           <controls:TimePicker HeightRequest="100"/>
+            <controls:TimePicker />
+            
+            <Label Text="Uložené pokrmy:" HorizontalTextAlignment="Center" />
             
         </StackLayout>
     </ScrollView>

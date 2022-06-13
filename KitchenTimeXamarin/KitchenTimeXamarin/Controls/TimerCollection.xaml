@@ -14,7 +14,8 @@
         <CarouselView ItemsSource="{Binding Timers, Source={x:Reference this}}"
                       PeekAreaInsets="50"
                       Loop="False"
-                      HorizontalScrollBarVisibility="Never">
+                      HorizontalScrollBarVisibility="Never"
+                      >
             <CarouselView.ItemsLayout >
                 <LinearItemsLayout Orientation="Horizontal" 
                                    ItemSpacing="30"/> 
