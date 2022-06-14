@@ -46,7 +46,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
         <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.58" />
         <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.59" />
         <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="20.1.0.59" />

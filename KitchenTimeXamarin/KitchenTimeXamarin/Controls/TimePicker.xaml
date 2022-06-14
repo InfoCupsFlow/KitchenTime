@@ -5,13 +5,17 @@
              x:Class="KitchenTimeXamarin.Controls.TimePicker"
              xmlns:pickers="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:viewModels="clr-namespace:KitchenTimeXamarin.ViewModels;assembly=KitchenTimeXamarin"
              xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
-             x:DataType="controls:TimePicker">
-
+             x:DataType="controls:TimePicker"
+             x:Name="This">
 
     <xct:Expander>
         <xct:Expander.Header>
-            <Label Text="Nastavit vlastní časovač" HorizontalTextAlignment="Center" />
+            <StackLayout>
+                <Label Text="Nastavit vlastní časovač" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding CustomTime}" HorizontalTextAlignment="Center" />
+            </StackLayout>
         </xct:Expander.Header>
         <Grid HeightRequest="150">
             <Grid.ColumnDefinitions>
@@ -20,7 +24,7 @@
             </Grid.ColumnDefinitions>
 
             <pickers:SfTimePicker HeaderText="Spustit časovač"
-                                  Time="{Binding CustomTime}"
+                                  Time="{Binding Path=CustomTime, Mode=TwoWay}"
                                   HeaderFontFamily="{StaticResource Font}"
                                   ShowFooter="False"
                                   ShowHeader="False"
@@ -48,7 +52,8 @@
                     FontFamily="{StaticResource MaterialIconsOutlined}"
                     FontSize="80"
                     Background="Transparent"
-                    />
+                    Command="{Binding Path=CreateCustomTimerCommand, Source={x:Reference This}}"
+            />
         </Grid>
     </xct:Expander>
 

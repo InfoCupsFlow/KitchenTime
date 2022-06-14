@@ -8,6 +8,7 @@
              x:Class="KitchenTimeXamarin.Views.MainPage"
              Shell.FlyoutBehavior="Disabled"
              x:DataType="viewModels:MainViewModel"
+             x:Name="Page"
              BackgroundColor="{AppThemeBinding 
                                     Light={StaticResource ColorBackground},
                                     Dark={StaticResource ColorBackgroundDark}}">
@@ -31,7 +32,7 @@
 
             <controls:TimerCollection Timers="{Binding Timers}"/>
 
-            <controls:TimePicker />
+            <controls:TimePicker CreateCustomTimerCommand="{Binding Path=CreateTimerCommant}" />
             
             <Label Text="Uložené pokrmy:" HorizontalTextAlignment="Center" />
             
