@@ -33,8 +33,8 @@ namespace KitchenTimeXamarin.ViewModels
 
 		private void CreateTimer(Timer timer)
 		{
-			Timer newTimer = new Timer() { Name = "Nový", Duration = TimeSpan.Zero };
-			Timers.Add(newTimer);
+			if(timer == null) return;
+			Timers.Add(timer);
 		}
 	}
 }

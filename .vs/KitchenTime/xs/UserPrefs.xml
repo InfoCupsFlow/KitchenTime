@@ -1,24 +1,22 @@
 ﻿<Properties StartupConfiguration="{02BC9580-DF03-4675-8BC8-1EE28E17897F}|Default">
-  <MonoDevelop.Ide.ItemProperties.KitchenTimeXamarin.Droid PreferredExecutionTarget="Android.Pixel_4_API_30" />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_30" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.KitchenTimeXamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.218AF28E-EBD9-4020-96FE-807ED0DECE31" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.KitchenTimeXamarin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7A922473-1672-4BC8-B2CD-97BBCBF48903" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="12.3.99.58" />
+  <MultiItemStartupConfigurations />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_30" />
+  <MonoDevelop.Ide.ItemProperties.KitchenTimeXamarin.Droid PreferredExecutionTarget="Android.Pixel_4_API_30" />
   <MonoDevelop.Ide.Workbench ActiveDocument="KitchenTimeXamarin/KitchenTimeXamarin/Views/MainPage.xaml">
     <Files>
-      <File FileName="KitchenTimeXamarin/KitchenTimeXamarin/Views/MainPage.xaml" Line="35" Column="9" />
+      <File FileName="KitchenTimeXamarin/KitchenTimeXamarin/Views/MainPage.xaml" Line="25" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="KitchenTime" expanded="True">
-            <Node name="KitchenTimeXamarin" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="MainPage.xaml" selected="True" />
-              </Node>
-            </Node>
+            <Node name="KitchenTimeXamarin" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -27,7 +25,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="12.3.99.58" />
 </Properties>

@@ -20,7 +20,17 @@ namespace KitchenTimeXamarin.Controls
 			{
 				customTime = value;
 				OnPropertyChanged(nameof(CustomTime));
+				OnPropertyChanged(nameof(CustomTimer));
 			}
+		}
+
+		public Timer CustomTimer
+		{
+			get => new Timer()
+			{
+				Name = CustomTime.ToString(),
+				Duration = new TimeSpan(CustomTime.Hours, CustomTime.Minutes, CustomTime.Seconds)
+			};
 		}
 
 		public static readonly BindableProperty CreateCustomTimerCommandProperty = BindableProperty.Create(

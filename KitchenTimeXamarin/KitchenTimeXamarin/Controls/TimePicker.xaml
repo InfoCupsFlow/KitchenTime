@@ -10,13 +10,7 @@
              x:DataType="controls:TimePicker"
              x:Name="This">
 
-    <xct:Expander>
-        <xct:Expander.Header>
-            <StackLayout>
-                <Label Text="Nastavit vlastní časovač" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding CustomTime}" HorizontalTextAlignment="Center" />
-            </StackLayout>
-        </xct:Expander.Header>
+
         <Grid HeightRequest="150">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
@@ -24,7 +18,7 @@
             </Grid.ColumnDefinitions>
 
             <pickers:SfTimePicker HeaderText="Spustit časovač"
-                                  Time="{Binding Path=CustomTime, Mode=TwoWay}"
+                                  Time="{Binding Path=CustomTime, Source={x:Reference This}, Mode=TwoWay}"
                                   HeaderFontFamily="{StaticResource Font}"
                                   ShowFooter="False"
                                   ShowHeader="False"
@@ -53,9 +47,10 @@
                     FontSize="80"
                     Background="Transparent"
                     Command="{Binding Path=CreateCustomTimerCommand, Source={x:Reference This}}"
+                    CommandParameter="{Binding Path=CustomTimer, Source={x:Reference This}}"
             />
         </Grid>
-    </xct:Expander>
+
 
 
 </ContentView>
