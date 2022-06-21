@@ -23,11 +23,9 @@
             
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="{StaticResource Font}" />
-                <Setter Property="Background" Value="{StaticResource ColorButton}" />
-                <Setter Property="WidthRequest" Value="50" />
-                <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="CornerRadius" Value="25" />
                 <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
                 <Setter Property="TextTransform" Value="None" />
             </Style>
             

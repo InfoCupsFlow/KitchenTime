@@ -11,7 +11,7 @@
              x:Name="This">
 
 
-        <Grid HeightRequest="150">
+        <Grid HeightRequest="100">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="2*" />
@@ -22,8 +22,6 @@
                                   HeaderFontFamily="{StaticResource Font}"
                                   ShowFooter="False"
                                   ShowHeader="False"
-                                  PickerHeight="100"
-                                  PickerWidth="20"
                                   BackgroundColor="Transparent"
                                   ColumnHeaderBackgroundColor="Transparent"
                                   ColumnHeaderFontSize="10"
@@ -38,11 +36,11 @@
                                   SelectedItemTextColor="{StaticResource ColorPrimary}"
                                   UnselectedItemTextColor="{StaticResource ColorSecundary}"
                                   UnselectedItemFontFamily="{StaticResource Font}"
-                                  UnselectedItemFontSize="16"
+                                  UnselectedItemFontSize="12"
                                   Background="{StaticResource ColorBackground}" />
 
             <Button Grid.Column="1"
-                    Text="&#xe1c4;"
+                    Text="&#xe5df;"
                     FontFamily="{StaticResource MaterialIconsOutlined}"
                     FontSize="80"
                     Background="Transparent"

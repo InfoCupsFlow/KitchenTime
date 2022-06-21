@@ -5,9 +5,9 @@
              xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
              xmlns:data="clr-namespace:KitchenTimeXamarin.Data.Models;assembly=KitchenTimeXamarin"
              x:Class="KitchenTimeXamarin.Controls.TimerCollection"
-             HeightRequest="400"
              x:DataType="controls:TimerCollection"
-             x:Name="this">
+             x:Name="this"
+             HeightRequest="500">
 
 
     <StackLayout Padding="0,10,0,10">
