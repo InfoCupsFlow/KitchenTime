@@ -3,6 +3,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:KitchenTimeXamarin.Controls;assembly=KitchenTimeXamarin"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              x:Class="KitchenTimeXamarin.Controls.TimerCard"
              x:DataType="controls:TimerCard"
              x:Name="this">
@@ -12,14 +13,25 @@
         <Frame HasShadow="False" 
                BackgroundColor="{StaticResource ColorBackground}"
                BorderColor="White">
-            <StackLayout HorizontalOptions="Center">
+            <FlexLayout Direction="Column"
+                        JustifyContent="SpaceBetween">
                 <Label Text="{Binding Timer.Name, Source={x:Reference this}}"
                        HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Timer.Duration, Source={x:Reference this}}" 
-                       HorizontalTextAlignment="Center"/>
+                
+                <gauge:SfCircularGauge HeightRequest="250" >
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale ShowRim="False" ShowTicks="False" ShowLabels="False" RimColor="Red" RimThickness="10" StartValue="0" EndValue="{Binding Timer.Duration.TotalSeconds, Source={x:Reference this}}" >
+                            <gauge:Scale.Ranges>
+                                <gauge:Range StartValue="0" EndValue="{Binding Timer.Duration.TotalSeconds, Source={x:Reference this}}" Color="White" Offset="1"/>
+                                <gauge:Range StartValue="0" EndValue="{Binding CountDown.TotalSeconds, Source={x:Reference this}}" Color="{StaticResource ColorPrimary}" Offset="1"/>
+                            </gauge:Scale.Ranges>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+                
                 <Label Text="{Binding CountDown, Source={x:Reference this}}" 
                        HorizontalTextAlignment="Center"/>
-            </StackLayout>
+            </FlexLayout>
         </Frame>
         
     </ContentPage.Content>

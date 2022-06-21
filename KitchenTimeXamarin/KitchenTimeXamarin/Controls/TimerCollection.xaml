@@ -12,7 +12,7 @@
 
     <StackLayout Padding="0,10,0,10">
         <CarouselView ItemsSource="{Binding Timers, Source={x:Reference this}}"
-                      PeekAreaInsets="50"
+                      PeekAreaInsets="40"
                       Loop="False"
                       HorizontalScrollBarVisibility="Never"
                       ItemsUpdatingScrollMode="KeepLastItemInView">
