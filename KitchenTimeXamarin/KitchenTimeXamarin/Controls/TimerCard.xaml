@@ -18,19 +18,20 @@
                        HorizontalTextAlignment="Center"/>
                 
                 <gauge:SfCircularGauge HeightRequest="250">
-                    <gauge:SfCircularGauge.Annotations>
-                        <gauge:GaugeAnnotation >
+                    <gauge:SfCircularGauge.Annotations >
+                        <gauge:GaugeAnnotation ViewMargin="0,15">
                             <gauge:GaugeAnnotation.View>
-                                <FlexLayout Direction="Column"
-                                            JustifyContent="Center">
+                                <FlexLayout Direction="Column" JustifyContent="Center">
+                                    <Label Text="{Binding Timer.Duration, Source={x:Reference this}}"
+                                           HorizontalTextAlignment="Center" 
+                                           TextColor="#5586D6"/>
                                     <Label Text="{Binding CountDown, Source={x:Reference this}}"
                                            FontSize="40"
                                            HorizontalTextAlignment="Center" />
-                                    <Label Text="{Binding Timer.Duration, Source={x:Reference this}}"
-                                           HorizontalTextAlignment="Center" />
                                     <Button Text="&#xe034;"
                                             FontFamily="{StaticResource MaterialIconsOutlined}"
-                                            FontSize="60"  />
+                                            FontSize="55"
+                                            TextColor="#5F8FDD"/>
                                 </FlexLayout>
                             </gauge:GaugeAnnotation.View>
                         </gauge:GaugeAnnotation>

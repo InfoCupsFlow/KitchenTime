@@ -59,6 +59,7 @@ namespace KitchenTimeXamarin.Controls
 			Device.StartTimer(new TimeSpan(0,0,1), () =>
 			{
 				CountDown -= TimeSpan.FromSeconds(1);
+				Console.WriteLine("Tick");
 
 				if (CountDown.TotalSeconds <= 0)
 				{

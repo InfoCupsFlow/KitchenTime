@@ -8,6 +8,7 @@
             <Color x:Key="ColorBackground">#ECF4FF</Color>
             <Color x:Key="ColorBackgroundDark">#373737</Color>
             <Color x:Key="ColorPrimary">#3D69B0</Color>
+            <Color x:Key="ColorPrimaryLight">#5F8FDD</Color>
             <Color x:Key="ColorSecundary">#7698D0</Color>
             <Color x:Key="ColorButton">White</Color> 
             
@@ -23,7 +24,7 @@
             
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="{StaticResource Font}" />
-                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorPrimaryLight}" />
                 <Setter Property="BackgroundColor" Value="Transparent"></Setter>
                 <Setter Property="Padding" Value="0"></Setter>
                 <Setter Property="TextTransform" Value="None" />

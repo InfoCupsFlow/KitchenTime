@@ -7,7 +7,7 @@
              x:Class="KitchenTimeXamarin.Controls.TimerCollection"
              x:DataType="controls:TimerCollection"
              x:Name="this"
-             HeightRequest="500">
+             HeightRequest="450">
 
 
     <StackLayout Padding="0,10,0,10">
