@@ -31,7 +31,8 @@ namespace KitchenTimeXamarin.Controls
 
 		private static void OnTimerChanged(BindableObject bindable, object oldvalue, object newvalue)
 		{
-			instance.StartCountDown();
+			var control = (TimerCard)bindable;
+			control.StartCountDown();
 		}
 
 
@@ -44,13 +45,9 @@ namespace KitchenTimeXamarin.Controls
 		#endregion
 
 
-		private static TimerCard instance;
-		
-
 		public TimerCard()
 		{
 			InitializeComponent();
-			instance = this;
 		}
 
 		private void StartCountDown()
@@ -58,14 +55,15 @@ namespace KitchenTimeXamarin.Controls
 			CountDown = Timer.Duration;
 			Device.StartTimer(new TimeSpan(0,0,1), () =>
 			{
-				CountDown -= TimeSpan.FromSeconds(1);
-				Console.WriteLine("Tick");
-
 				if (CountDown.TotalSeconds <= 0)
 				{
+					CountDown = TimeSpan.Zero;
 					OnCounDonwFinished();
 					return false;
 				}
+				
+				CountDown -= TimeSpan.FromSeconds(1);
+				Console.WriteLine("Tick");
 
 				return true;
 			});
