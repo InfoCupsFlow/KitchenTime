@@ -20,7 +20,6 @@ namespace KitchenTimeXamarin.ViewModels
 		public MainViewModel()
 		{
 			Timers = new ObservableCollection<Timer>();
-			Timers.Add(new Timer(){Name = "Pečené kuře", Duration = new TimeSpan(0, 10, 0) });
 
 			TimeSets = new ObservableCollection<TimeSet>();
 			TimeSets.Add(new TimeSet(){Name = "10s", Duration =new TimeSpan(0,0,10)});
