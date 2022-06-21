@@ -15,10 +15,12 @@
                       PeekAreaInsets="50"
                       Loop="False"
                       HorizontalScrollBarVisibility="Never"
-                      >
+                      ItemsUpdatingScrollMode="KeepLastItemInView">
             <CarouselView.ItemsLayout >
                 <LinearItemsLayout Orientation="Horizontal" 
-                                   ItemSpacing="30"/> 
+                                   ItemSpacing="30"
+                                   SnapPointsAlignment="Center"
+                                   SnapPointsType="MandatorySingle"/> 
             </CarouselView.ItemsLayout>
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="data:Timer">
