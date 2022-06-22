@@ -32,6 +32,7 @@
 
             <controls:TimerCollection Timers="{Binding Timers}"/>
 
+            <Label Text="... nebo nastavte a spusťte vlastní časovač:" HorizontalTextAlignment="Center"/>
             <controls:TimePicker CreateCustomTimerCommand="{Binding Path=CreateTimerCommant}" />
             
             <Label Text="Uložené pokrmy:" HorizontalTextAlignment="Center" />

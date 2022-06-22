@@ -12,10 +12,16 @@
 
     <StackLayout Padding="0,10,0,10">
         <CarouselView ItemsSource="{Binding Timers, Source={x:Reference this}}"
-                      PeekAreaInsets="40"
                       Loop="False"
                       HorizontalScrollBarVisibility="Never"
                       ItemsUpdatingScrollMode="KeepLastItemInView">
+            <CarouselView.EmptyView>
+                <FlexLayout Direction="Column"
+                            JustifyContent="SpaceEvenly"
+                            Padding="20">
+                    <Label Text="Spusťte časovat jediným kliknutím na některý z uložených pokrmů." FontSize="Large" HorizontalTextAlignment="Center"/>
+                </FlexLayout>
+            </CarouselView.EmptyView>
             <CarouselView.ItemsLayout >
                 <LinearItemsLayout Orientation="Horizontal" 
                                    ItemSpacing="30"
